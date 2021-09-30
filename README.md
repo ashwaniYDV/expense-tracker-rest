@@ -2,7 +2,7 @@
 
 REST API for tracking expenses.
 
-A RESTful API created using Spring Boot. Used PostgreSQL as the relational database and JdbcTemplate to interact with that. Used JSON Web Token (JWT) to add authentication.
+A RESTful API created using Spring Boot. Used PostgreSQL as the relational database and Jdbc Template to interact with that. Used JSON Web Token (JWT) to add authentication.
 
 ## Setup and Installation
 

@@ -1,8 +1,16 @@
 # expense-tracker-rest
 
-REST API for tracking expenses.
+A RESTful API for tracking expenses created using Spring Boot.
 
-A RESTful API created using Spring Boot. Used PostgreSQL as the relational database and Jdbc Template to interact with that. Used JSON Web Token (JWT) to add authentication.
+Used PostgreSQL as the relational database and JdbcTemplate to interact with that.
+
+Used JSON Web Token (JWT) to add authentication and protect certain endpoints.
+
+Users can register and login and then record their expense transactions under different categories.
+
+Authenticated users can create various categories such as for shopping, food items, billings and then for eath of these categories they can add transactions.
+
+This is a typical OneToMany relationship.
 
 ## Setup and Installation
 
@@ -45,6 +53,34 @@ A RESTful API created using Spring Boot. Used PostgreSQL as the relational datab
    ```
    this runs at port 8080 and hence all enpoints can be accessed starting from http://localhost:8080
 
-## Resource
+## API Schema
 
-Credit - [Youtube Playlist](https://www.youtube.com/playlist?list=PLWieu6NbbqTwwYwylgXmmKVX1ZWsUVx8m)
+#### /api/users
+| Route      | Method   | Description                     | Authorization      |
+|------------|----------|---------------------------------|--------------------|
+| /register  | [POST]   | user register                   | (No)               |
+| /login     | [POST]   | user login                      | (No)               |
+
+
+#### /api/categories
+| Route        | Method   | Description           | Authorization |
+|--------------|----------|-----------------------|---------------|
+| /            | [POST]   | creating a category for authenticated user    | (Yes)      |
+| /            | [GET]    | get all categories of authenticated user      | (Yes)       |
+| /:categoryId | [GET]    | get catagory by Id of authenticated user | (Yes)       |
+| /:categoryId | [PUT]    | Update catagory by Id of authenticated user | (Yes)       |
+| /:categoryId | [DELETE] | Delete catagory by Id and also deletes all transactions under this category of authenticated user| (Yes) |
+
+#### /api/categories/:categoryId/transactions
+| Route                        | Method   | Description                             | Authorization   |
+|------------------------------|----------|-----------------------------------------|-----------------|
+| /                            | [GET]    | get all transactions by categoryId of authenticated user  | (Yes)        |
+| /                            | [POST]    | create a transactions by categoryId of authenticated user  | (Yes)        |
+| /:transactionId              | [GET]    | get a transactions by categoryId and transactionId of authenticated user  | (Yes)   |
+| /:transactionId              | [PUT]    | update a transactions by categoryId and transactionId of authenticated user  | (Yes)   |
+| /:transactionId              | [DELETE]    | delete a transactions by categoryId and transactionId of authenticated user  | (Yes)   |
+
+
+#### Learnt from
+
+https://www.youtube.com/watch?v=fVq9aPNGLAg&list=PLWieu6NbbqTwwYwylgXmmKVX1ZWsUVx8m

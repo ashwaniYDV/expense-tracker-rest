@@ -17,7 +17,7 @@ This is a typical OneToMany relationship.
 1. **Clone the repo from GitHub**
    ```sh
    git clone https://github.com/ashwaniYDV/expense-tracker-spring-rest.git
-   cd expense-tracker-rest
+   cd expense-tracker-spring-rest
    ```
 2. **Spin-up PostgreSQL database instance**
 
@@ -29,7 +29,7 @@ This is a typical OneToMany relationship.
      ```
 3. **Create database objects**
 
-   In the root application directory (expense-tracker-rest), SQL script file (expensetracker_db.sql) is present for creating all database objects
+   In the root application directory (expense-tracker-spring-rest), SQL script file (expensetracker_db.sql) is present for creating all database objects
    - if using docker (else skip this step), first copy this file to the running container using below command and then exec into the running container:
      ```
      docker container cp expensetracker_db.sql postgresdb:/

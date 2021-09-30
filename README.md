@@ -1,4 +1,4 @@
-# expense-tracker-rest
+# expense-tracker-spring-rest
 
 A RESTful API for tracking expenses created using Spring Boot.
 
@@ -16,7 +16,7 @@ This is a typical OneToMany relationship.
 
 1. **Clone the repo from GitHub**
    ```sh
-   git clone https://github.com/ashwaniYDV/expense-tracker-rest.git
+   git clone https://github.com/ashwaniYDV/expense-tracker-spring-rest.git
    cd expense-tracker-rest
    ```
 2. **Spin-up PostgreSQL database instance**
